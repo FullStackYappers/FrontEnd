@@ -2,19 +2,32 @@ import "./css/HomePage.css";
 
 import Navbar from "../components/Navbar/Navbar";
 import MovieCarousel from "../components/HomePageComponents/MovieCarousel";
+import GenreMovieCarousel from "../components/HomePageComponents/GenreMovieCarousel";
 
 import { useEffect, useState } from "react";
 
 const HomePage = () => {
   const randGenre = [
     "Action",
+    "Crime",
+    "Science Fiction",
+    "Fantasy",
     "Adventure",
+    "Animation",
+    "Family",
+    "Thriller",
+    "Mystery",
+    "Drama",
     "Comedy",
+    "Music",
     "Romance",
     "Horror",
-    "Drama",
-    "Fiction",
+    "Documentary",
+    "History",
+    "War",
+    "Western",
   ];
+
   const [currentGenre, setCurrentGenre] = useState("");
 
   useEffect(() => {
@@ -36,7 +49,7 @@ const HomePage = () => {
         </div>
         <div className="randgenre grid grid-auto-rows gap-4">
           <h2 className="font-outfit text-3xl">{currentGenre}</h2>
-          <MovieCarousel />
+          <GenreMovieCarousel genre={currentGenre} />
         </div>
       </div>
     </>
